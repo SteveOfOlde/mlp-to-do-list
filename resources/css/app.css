@@ -1,0 +1,30 @@
+
+
+header{
+    padding: 2rem 0 4rem 0;
+}
+
+footer{
+    text-align: center;
+    padding: 6rem 0 0 0;
+}
+
+.btn-block{
+    display: block;
+    width: 100%;
+}
+
+.btn-block{
+    display: block;
+    width: 100%;
+}
+
+.tasks .form-control{
+    margin-bottom: 1rem;
+}
+.tasks .btn-success i, .tasks .btn-danger i{
+    font-size: 20px;
+}
+.tasks .completed{
+    text-decoration: line-through;
+}

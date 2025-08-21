@@ -1,3 +1,15 @@
+# Install Instructions
+
+- Clone Repo
+- Run commands: 
+  - composer install
+  - npm install
+  - npm build
+  - php artisan migrate
+  - php artisan serve
+  - View in browser :)
+
+
 ## MLP To-DO - Instructions
 
 You must demonstrate the following abilities/skills: make models, controllers, migrations, HTML, CSS, blade, Git commits, blade templates, etc. 

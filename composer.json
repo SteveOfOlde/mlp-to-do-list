@@ -6,9 +6,10 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "laravel/framework": "12.0",
+        "laravel/framework": "12.1.1.0",
         "laravel/sanctum": "^4.0",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "livewire/livewire": "^3.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -34,7 +35,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php -r \"if (!file_exists('database/database.sqlite')) { file_put_contents('database/database.sqlite', ''); }\""
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
