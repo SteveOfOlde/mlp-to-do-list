@@ -28,11 +28,18 @@ use Illuminate\Database\Eloquent\Collection;
                             @foreach ($tasks as $key=>$task)
                                 <tr>
                                     <td>{{$key + 1}}</td>
-                                    <td>{{ $task->title }}</td>
+                                    <td>
+                                        @if($task->completed)
+                                            <span class="completed">{{ $task->title }}</span>
+                                        @else
+                                            {{ $task->title }}
+                                        @endif
+
+                                    </td>
                                     <td>
                                         @if(!$task->completed)
                                             <button type="button" class="btn btn-success"
-                                                    wire:click="delete({{ $task->id }})">
+                                                    wire:click="complete({{ $task->id }})">
                                                 <i class="bi bi-check"></i>
                                             </button>
                                             <button type="button" class="btn btn-danger"
