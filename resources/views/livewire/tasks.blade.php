@@ -31,10 +31,13 @@ use Illuminate\Database\Eloquent\Collection;
                                     <td>{{ $task->title }}</td>
                                     <td>
                                         @if(!$task->completed)
-                                            <button type="button" class="btn btn-success">
+                                            <button type="button" class="btn btn-success"
+                                                    wire:click="delete({{ $task->id }})">
                                                 <i class="bi bi-check"></i>
                                             </button>
-                                            <button type="button" class="btn btn-danger">
+                                            <button type="button" class="btn btn-danger"
+                                                    wire:click="delete({{ $task->id }})"
+                                                    wire:confirm="Are you sure you want to delete this task?">
                                                 <i class="bi bi-x"></i>
                                             </button>
                                         @endif

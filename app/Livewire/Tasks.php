@@ -8,11 +8,28 @@ use App\Models\Task;
 
 class Tasks extends Component
 {
-    public $count = 0;
+    public string $title = '';
 
-    public function increment()
+    public function save()
     {
-        $this->count++;
+        Task::create(
+            $this->only(['title'])
+        );
+
+        session()->flash('status', 'Task created!');
+    }
+
+    public function complete($id): void
+    {
+        $task = Task::findOrFail($id);
+        $task->completed = true;
+        $task->save();
+    }
+
+    public function delete($id): void
+    {
+        $task = Task::findOrFail($id);
+        $task->delete();
     }
 
     public function render(): View
