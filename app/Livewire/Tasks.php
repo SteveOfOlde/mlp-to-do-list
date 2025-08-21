@@ -2,7 +2,9 @@
 
 namespace App\Livewire;
 
+use Illuminate\View\View;
 use Livewire\Component;
+use App\Models\Task;
 
 class Tasks extends Component
 {
@@ -13,8 +15,10 @@ class Tasks extends Component
         $this->count++;
     }
 
-    public function render()
+    public function render(): View
     {
-        return view('livewire.tasks');
+        return view('livewire.tasks')->with([
+            'tasks' => Task::all(),
+        ]);
     }
 }
